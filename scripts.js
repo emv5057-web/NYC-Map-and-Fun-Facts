@@ -1,3 +1,4 @@
+// Data for each borough shown in the info panel
 const boroughData = {
   Manhattan: {
     description: "Manhattan is the densest borough and the financial and cultural core of NYC.",
@@ -36,21 +37,23 @@ const boroughData = {
   }
 };
 
+// Check that Leaflet loaded
+console.log("Leaflet object:", L);
+
+// Create the Leaflet map
 const map = L.map("map", {
   scrollWheelZoom: false
 }).setView([40.7128, -74.0060], 10);
 
+// Add OpenStreetMap tiles
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors"
 }).addTo(map);
 
-setTimeout(() => {
-  map.invalidateSize();
-}, 100);
-
 let selectedLayer = null;
 let boroughLayer;
 
+// Update the info panel when a borough is clicked
 function updateInfoPanel(name) {
   const info = boroughData[name];
   if (!info) return;
@@ -67,6 +70,7 @@ function updateInfoPanel(name) {
   img.style.display = "block";
 }
 
+// Load borough boundaries
 fetch("https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/NYC_Borough_Boundary/FeatureServer/0/query?where=1=1&outFields=*&outSR=4326&f=pgeojson")
   .then(response => response.json())
   .then(data => {
@@ -79,7 +83,6 @@ fetch("https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/NYC_Bo
           fillOpacity: 0.55
         };
       },
-
       onEachFeature: function (feature, layer) {
         layer.on({
           click: function () {
@@ -125,6 +128,7 @@ fetch("https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/NYC_Bo
   })
   .catch(error => console.log("GeoJSON load error:", error));
 
+// Change page colors
 function setTheme(theme) {
   const body = document.body;
   const infoBox = document.getElementById("info-box");
