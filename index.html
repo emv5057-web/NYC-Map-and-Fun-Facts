@@ -1,81 +1,103 @@
-<h1>Quick Facts About the Five Boroughs of NYC</h1>
-<p class="subtitle">Click a borough to explore population, parks, and bike lanes.</p>
-  
-<div class="theme-buttons">
-  <button class="theme-btn" onclick="setTheme('classic')">Classic</button>
-  <button class="theme-btn" onclick="setTheme('dark')">Dark</button>
-  <button class="theme-btn" onclick="setTheme('pastel')">Pastel</button>
-</div>
-  
- <div id="info-box">
-  <div class="info-header">
-    <div class="info-text">
-      <h2 id="borough-name">Select a borough on the map to see details.</h2>
-      <p id="borough-description"></p>
-    </div>
-    <img id="borough-image" src="" alt="" />
-  </div>
-  
-  <div class="stats-grid">
-    <div class="stat-card">
-      <h3>Population</h3>
-      <p id="stat-population">--</p>
-    </div>
-
-    <div class="stat-card">
-      <h3>Parks</h3>
-      <p id="stat-parks">--</p>
-    </div>
-
-    <div class="stat-card">
-      <h3>Bike Lanes</h3>
-      <p id="stat-bikeLanes">--</p>
-    </div>
-  </div>
-</div>
-
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HTML5 Boilerplate</title>
+  <title>NYC Borough Explorer</title>
+
+  <!-- Link to CSS file -->
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <h1>Page Title</h1>
-  <script src="scripts.js"></script>
-</body>
 
-</html>
+  <!-- Main title -->
+
+  <h1>Quick Facts About the Five Boroughs of NYC</h1>
+  <p class="subtitle">Click a borough to explore population, parks, and bike lanes.</p>
+
+  <!-- Theme buttons -->
+
+  <div class="theme-buttons">
+    <button class="theme-btn" onclick="setTheme('classic')">Classic</button>
+    <button class="theme-btn" onclick="setTheme('dark')">Dark</button>
+    <button class="theme-btn" onclick="setTheme('pastel')">Pastel</button>
+  </div>
+
+  <!-- Info box -->
+
+  <div id="info-box">
+    <div class="info-header">
+      <div class="info-text">
+        <h2 id="borough-name">Select a borough on the map to see details.</h2>
+        <p id="borough-description"></p>
+      </div>
+      <img id="borough-image" src="" alt="" />
+    </div>
+
+```
+<div class="stats-grid">
+  <div class="stat-card">
+    <h3>Population</h3>
+    <p id="stat-population">--</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Parks</h3>
+    <p id="stat-parks">--</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Bike Lanes</h3>
+    <p id="stat-bikeLanes">--</p>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- Map -->
 
   <div id="map"></div>
+
+  <!-- Borough cards -->
+
+  <div class="borough-cards">
+    <div class="borough-card">
+      <div class="card-label">Manhattan</div>
+      <div class="card-overlay">Skyscrapers, Central Park, and the city’s business core.</div>
+    </div>
+
+```
+<div class="borough-card">
+  <div class="card-label">Brooklyn</div>
+  <div class="card-overlay">Creative energy, brownstones, and Prospect Park.</div>
 </div>
-<div class="borough-cards">
-  <div class="borough-card">
-    <div class="card-label">Manhattan</div>
-    <div class="card-overlay">Skyscrapers, Central Park, and the city’s business core.</div>
-  </div>
 
-  <div class="borough-card">
-    <div class="card-label">Brooklyn</div>
-    <div class="card-overlay">Creative energy, brownstones, and Prospect Park.</div>
-  </div>
-
-  <div class="borough-card">
-    <div class="card-label">Queens</div>
-    <div class="card-overlay">Diverse neighborhoods, great food, and major airports.</div>
-  </div>
-
-  <div class="borough-card">
-    <div class="card-label">Bronx</div>
-    <div class="card-overlay">Home of the Yankees, the Bronx Zoo, and big green spaces.</div>
-  </div>
-
-  <div class="borough-card">
-    <div class="card-label">Staten Island</div>
-    <div class="card-overlay">Waterfront views, ferry rides, and a quieter pace.</div>
-  </div>
+<div class="borough-card">
+  <div class="card-label">Queens</div>
+  <div class="card-overlay">Diverse neighborhoods, great food, and major airports.</div>
 </div>
+
+<div class="borough-card">
+  <div class="card-label">Bronx</div>
+  <div class="card-overlay">Home of the Yankees, the Bronx Zoo, and big green spaces.</div>
+</div>
+
+<div class="borough-card">
+  <div class="card-label">Staten Island</div>
+  <div class="card-overlay">Waterfront views, ferry rides, and a quieter pace.</div>
+</div>
+```
+
+  </div>
+
+  <!-- Link to JavaScript file -->
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>
